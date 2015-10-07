@@ -20,10 +20,6 @@
     Switch parameter to verify the uri is a vaild rss feed
     Default value is False
     When enabled the uri is checked via The Feed validation Service https://validator.w3.org/
-.INPUTS
-    String
-.OUTPUTS
-    PSCustomObject
 .EXAMPLE
    Get-RSSFeed -uri "http://rss.cnn.com/rss/cnn_topstories.rss"
    Retrives the Top Stories feed from CNN and outputs the Headline of each.
@@ -76,7 +72,7 @@ function Get-RSSFeed
 {
     [CmdletBinding()]
     [Alias()]
-    [OutputType([int])]
+    [OutputType([PSCustomObject])]
     Param
     (
         [Parameter(Mandatory=$true,
